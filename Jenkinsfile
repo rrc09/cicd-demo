@@ -1,18 +1,23 @@
 pipeline {
   agent any
-  environment {
-    ANYPOINT_CREDENTIALS = credentials('anypoint-exchange-rc')
-  }
   stages {
-    stage('Checkout') {
+    stage('📥 Checkout from GitHub') {
       steps {
         git credentialsId: 'GITHUB_CREDENTIALS', url: 'https://github.com/rrc09/cicd-demo'
       }
     }
-    stage('Build & Deploy') {
+    stage('📦 Build & Deploy to CloudHub 2.0') {
       steps {
-        sh 'mvn clean deploy -DmuleDeploy -s settings.xml'
+        sh 'mvn clean deploy -DmuleDeploy'
       }
+    }
+  }
+  post {
+    success {
+      echo '🟢 Deployment to CloudHub 2.0 completed successfully!'
+    }
+    failure {
+      echo '🔴 Deployment failed. Check logs for details.'
     }
   }
 }

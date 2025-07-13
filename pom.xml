@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
@@ -14,7 +16,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.9.3</app.runtime>
-		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -24,29 +26,35 @@
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
+			<!-- <plugin> <groupId>org.mule.tools.maven</groupId> <artifactId>mule-maven-plugin</artifactId> 
+				<version>${mule.maven.plugin.version}</version> <extensions>true</extensions> 
+				<configuration> <cloudHubDeployment> <uri>https://anypoint.mulesoft.com</uri> 
+				<muleVersion>${app.runtime}</muleVersion> <username>emailformule</username> 
+				<password>Amarnath@01</password> <applicationName>cicd-demo-23042025</applicationName> 
+				<environment>${environment}</environment> <region>us-east-2</region> <workers>1</workers> 
+				<workerType>MICRO</workerType> <properties> <key>value</key> </properties> 
+				</cloudHubDeployment> <classifier>mule-application</classifier> </configuration> 
+				</plugin> -->
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>4.1.1</version>
 				<extensions>true</extensions>
 				<configuration>
-    <cloudHubDeployment>
-      <uri>https://anypoint.mulesoft.com</uri>
-      <muleVersion>${app.runtime}</muleVersion>
-      <username>emailformule</username>
-      <password>Amarnath@01</password>
-      <applicationName>cicd-demo-23042025</applicationName>
-      <environment>${environment}</environment>
-      <region>us-east-2</region>
-      <workers>1</workers>
-      <workerType>MICRO</workerType>
-      <properties>
-        <key>value</key>
-      </properties>
-    </cloudHubDeployment>
-  </configuration>
+					<cloudHub2Deployment>
+						<provider>MC</provider>
+						<environment>Sandbox</environment>
+						<target>Cloudhub-US-East-1</target>
+						<muleVersion>4.9.3</muleVersion>
+						<releaseChannel>LTS</releaseChannel>
+						<javaVersion>17</javaVersion>
+						<server>anypoint-exchange-rc</server>
+						<applicationName>${project.artifactId}</applicationName>
+						<replicas>1</replicas>
+						<vCores>0.1</vCores>
+					</cloudHub2Deployment>
+				</configuration>
 			</plugin>
-			
 		</plugins>
 	</build>
 

@@ -26,15 +26,7 @@
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
-			<!-- <plugin> <groupId>org.mule.tools.maven</groupId> <artifactId>mule-maven-plugin</artifactId> 
-				<version>${mule.maven.plugin.version}</version> <extensions>true</extensions> 
-				<configuration> <cloudHubDeployment> <uri>https://anypoint.mulesoft.com</uri> 
-				<muleVersion>${app.runtime}</muleVersion> <username>emailformule</username> 
-				<password>Amarnath@01</password> <applicationName>cicd-demo-23042025</applicationName> 
-				<environment>${environment}</environment> <region>us-east-2</region> <workers>1</workers> 
-				<workerType>MICRO</workerType> <properties> <key>value</key> </properties> 
-				</cloudHubDeployment> <classifier>mule-application</classifier> </configuration> 
-				</plugin> -->
+
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>

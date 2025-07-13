@@ -49,7 +49,7 @@
 						<releaseChannel>LTS</releaseChannel>
 						<javaVersion>17</javaVersion>
 						<server>anypoint-exchange-rc</server>
-						<applicationName>${project.artifactId}</applicationName>
+						<applicationName>cicd-demo</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 					</cloudHub2Deployment>

@@ -40,7 +40,7 @@
 						<muleVersion>4.9.3</muleVersion>
 						<releaseChannel>LTS</releaseChannel>
 						<javaVersion>17</javaVersion>
-						<server>anypoint-exchange-rc</server>
+						<server>anypoint-exchange-v3</server>
 						<applicationName>cicd-demo</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
@@ -67,7 +67,7 @@
 
 	<repositories>
 		<repository>
-			<id>anypoint-exchange-rc</id>
+			<id>anypoint-exchange-v3</id>
 			<name>Anypoint Exchange</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 			<layout>default</layout>

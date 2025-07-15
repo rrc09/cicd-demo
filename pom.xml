@@ -12,7 +12,7 @@
 	<name>cicd-demo</name>
 
 	<properties>
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.4.0</mule.maven.plugin.version>
 		<mule.runtime.version>4.9.3</mule.runtime.version>
 		<java.version>17</java.version>
 	</properties>
